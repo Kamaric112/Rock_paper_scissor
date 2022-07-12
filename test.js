@@ -6,8 +6,8 @@ function computerPlay() {
     return result
 }
 
-let a = 0
-let b = 0
+let playerScore = 0
+let computerScore = 0
 
 function playRound(playerSelection, computerSelection) {
 
@@ -17,11 +17,11 @@ function playRound(playerSelection, computerSelection) {
         }
         else if (computerSelection == "scissors") {
             console.log ( `${playerSelection} beats ${computerSelection}` )
-            a++
+            playerScore++
         }
         else if ((computerSelection == "paper")) {
             console.log( `${computerSelection} beats ${playerSelection}` )
-            b++
+            computerScore++
         }
     }
 
@@ -31,11 +31,11 @@ function playRound(playerSelection, computerSelection) {
         }
         else if (computerSelection == "rock") {
             console.log( `${playerSelection} beats ${computerSelection}` )
-            a++
+            playerScore++
         }
         else if ((computerSelection == "scissors")) {
             console.log( `${computerSelection} beats ${playerSelection}` )
-            b++
+            computerScore++
         }
     }
 
@@ -45,11 +45,11 @@ function playRound(playerSelection, computerSelection) {
         }
         else if (computerSelection == "paper") {
             console.log( `${playerSelection} beats ${computerSelection}` )
-            a++
+            playerScore++
         }
         else if ((computerSelection == "rock")) {
             console.log( `${computerSelection} beats ${playerSelection}` )
-            b++
+            computerScore++
         }
     }
     // console.log(a)
@@ -70,21 +70,17 @@ function game() {
         let playerSelection = userinput()
         computerSelection = computerPlay()
         playRound(playerSelection, computerSelection)
-        console.log(a)
-        console.log(b)
+        console.log(playerScore )
+        console.log(computerScore)
 
-        if (a == 5 ) {
+        if (playerScore == 5 ) {
             console.log(`${playerSelection} (You) won!`)
             break
         }
-        if (b == 5 ) {
+        if (computerScore == 5 ) {
             console.log(`${computerSelection} (the computer) won!`)
             break
         }
-
-    //     console.log(playerSelection)
-    //     console.log(computerSelection)
-    // }
 }
 }
 game()
